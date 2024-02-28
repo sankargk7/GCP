@@ -50,6 +50,5 @@ steps:
       - '-c'
       - |
         echo "I am running in a private pool!"
-    pool:
-      name: 'projects/red-cable-413915/locations/europe-west3/workerPools/test-pool'
-    logging: CLOUD_LOGGING_ONLY
+options:
+  logging: CLOUD_LOGGING_ONLY
