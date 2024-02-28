@@ -45,8 +45,8 @@ steps:
   - id:
     name: 'bash'
     args: ['echo', 'I am running in a private pool!']
-    options:
+  options:
       pool:
-      name: 'projects/red-cable-413915/locations/europe-west3/workerPools/test-pool'
+        name: 'projects/red-cable-413915/locations/europe-west3/workerPools/test-pool'
   options:
   logging: CLOUD_LOGGING_ONLY
