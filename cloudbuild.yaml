@@ -44,6 +44,6 @@ steps:
         terraform apply --auto-approve
 
 options:
+  logging: CLOUD_LOGGING_ONLY
   pool:
     name: 'projects/red-cable-413915/locations/europe-west3/workerPools/test-pool'
-  logging: CLOUD_LOGGING_ONLY
