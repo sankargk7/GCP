@@ -42,13 +42,5 @@ steps:
         echo "Terraform Apply"
         echo "*******************"
         terraform apply --auto-approve
-
-  - id: 'Worker pool'
-    name: 'bash'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        echo "I am running in a private pool!"
 options:
   logging: CLOUD_LOGGING_ONLY
