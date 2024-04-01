@@ -3,13 +3,6 @@ provider "google" {
     credentials = "terraformcloudbuild.json"
 }
 
-resource "google_storage_bucket" "static" {
- name          = "red-cable-413915-1"
- location      = "US"
- storage_class = "STANDARD"
- uniform_bucket_level_access = true      
-}
-
 data "google_compute_network" "network" {
 name = "test-nw"
 project = "red-cable-413915"
