@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "test-bucket-91"
+    bucket = "dora-bucket1"
     prefix = "test/state"
   }
 }
