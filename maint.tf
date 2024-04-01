@@ -10,6 +10,20 @@ resource "google_storage_bucket" "static" {
  uniform_bucket_level_access = true      
 }
 
+resource "google_cloudbuild_worker_pool" "pool" {
+  name = "my-pool"
+  location = "europe-west3"
+  worker_config {
+    disk_size_gb = 100
+    machine_type = "e2-medium"
+    no_external_ip = false
+  }
+  network_config {
+    peered_network = "test-nw"
+    peered_network_ip_range = "10.10.6.0/24"
+  }
+}
+
 # resource "google_compute_instance" "vm" {
 #   name              = "terraform-instance-234"
 #   machine_type      = "n2-standard-2"
