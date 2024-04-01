@@ -8,7 +8,7 @@ steps:
         echo "*******************"
         echo "Terraform Init"
         echo "*******************"
-        terraform init -backend-config="bucket=dora-bucket1" -backend-config="prefix=test/state" || exit 1
+        terraform init
 
   - id: 'Validate Terraform'
     name: "hashicorp/terraform:1.0.0"
