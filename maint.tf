@@ -10,6 +10,11 @@ resource "google_storage_bucket" "static" {
  uniform_bucket_level_access = true      
 }
 
+data "google_compute_network" "network" {
+name = "test-nw"
+project = "red-cable-413915"
+}
+
 resource "google_cloudbuild_worker_pool" "pool" {
   name = "my-pool"
   location = "europe-west3"
@@ -19,7 +24,7 @@ resource "google_cloudbuild_worker_pool" "pool" {
     no_external_ip = false
   }
   network_config {
-    peered_network = "test-nw"
+    peered_network = data.google_compute_network.network.id
     peered_network_ip_range = "10.10.6.0/24"
   }
 }
