@@ -3,6 +3,20 @@ provider "google" {
     credentials = "terraformcloudbuild.json"
 }
 
+module "cloud_build_worker_pool" {
+  source = "./modules/workerpool"
+  
+  network_name      = var.network_name
+  project_id        = var.project_id
+  pool_name         = var.pool_name
+  location          = var.location
+  disk_size_gb      = var.disk_size_gb
+  machine_type      = var.machine_type
+  external_ip       = var.external_ip
+  network_ip_range  = var.network_ip_range
+}
+
+
 # data "google_compute_network" "network" {
 # name = "test-nw"
 # project = "red-cable-413915"
